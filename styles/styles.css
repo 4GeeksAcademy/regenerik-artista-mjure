@@ -511,13 +511,90 @@ body {
    EVENTOS
    ============================================ */
 .eventos {
-    background-color: var(--light-bg);
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(135deg, rgba(32, 20, 10, 0.72), rgba(88, 60, 35, 0.55)),
+        var(--light-bg);
+}
+
+.eventos::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.12), transparent 45%);
+    pointer-events: none;
+}
+
+.eventos .container {
+    position: relative;
+    z-index: 1;
+}
+
+.eventos-gallery {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.35rem;
+    padding: 1.5rem;
+    opacity: 0.42;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.eventos-gallery-item {
+    border-radius: 22px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 220px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    position: relative;
+    overflow: hidden;
+}
+
+.eventos-gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.3));
+}
+
+.eventos-gallery-item-1 {
+    background-image: url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=80');
+}
+
+.eventos-gallery-item-2 {
+    background-image: url('https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=900&q=80');
+}
+
+.eventos-gallery-item-3 {
+    background-image: url('https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=900&q=80');
+}
+
+.eventos-gallery-item-4 {
+    background-image: url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=900&q=80');
 }
 
 .eventos-content {
     text-align: center;
     max-width: 600px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(12px);
+    border-radius: 28px;
+    padding: 2rem;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+}
+
+.eventos h2 {
+    position: relative;
+    z-index: 1;
+    color: var(--light-text);
 }
 
 .eventos-intro {
@@ -525,6 +602,39 @@ body {
     color: var(--dark-text);
     margin-bottom: 2rem;
     line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+    .eventos-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 1rem;
+    }
+
+    .eventos-gallery-item {
+        min-height: 180px;
+    }
+}
+
+@media (max-width: 560px) {
+    .eventos-gallery {
+        grid-template-columns: 1fr;
+        gap: 0.7rem;
+    }
+
+    .eventos-content {
+        padding: 1.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .eventos-gallery {
+        gap: 1.8rem;
+        padding: 2rem;
+    }
+
+    .eventos-gallery-item {
+        min-height: 240px;
+    }
 }
 
 .eventos-cta {
@@ -632,28 +742,42 @@ body {
 
 .contact-info {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
     margin-bottom: 3rem;
     text-align: center;
 }
 
-.contact-item h3 {
-    color: var(--secondary-color);
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
+.contact-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .contact-item a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
     color: var(--light-text);
     text-decoration: none;
     transition: var(--transition);
-    font-weight: 500;
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
 }
 
 .contact-item a:hover {
-    color: var(--accent-color);
-    text-decoration: underline;
+    background-color: var(--secondary-color);
+    color: var(--dark-text);
+    transform: translateY(-2px) scale(1.05);
+}
+
+.contact-icon {
+    width: 22px;
+    height: 22px;
+    display: block;
 }
 
 .footer-bottom {
