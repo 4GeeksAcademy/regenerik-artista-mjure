@@ -23,7 +23,7 @@
         "image": "https://evelynbarboza.com/og-image.jpg",
         "description": "Artista plástica autodidacta uruguaya especializada en pintura acrílica sobre lienzo",
         "url": "https://evelynbarboza.com",
-        "telephone": "+598-ejemplo",
+        "telephone": "+59899123456",
         "email": "info@evelynbarboza.com",
         "address": {
             "@type": "PostalAddress",
@@ -45,14 +45,30 @@
     </script>
 
     <title>Evelyn Barboza | Artista Plástica Uruguaya - Pintura en Acrílico</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
     <!-- Header y Navegación -->
     <header class="header">
         <div class="header-content">
             <a href="#home" class="logo">Evelyn Barboza</a>
-            <nav class="navbar" aria-label="Navegación principal">
+
+            <!-- Acordeón tipo FAQ para navegación móvil -->
+            <details class="mobile-nav-accordion" role="group">
+                <summary class="mobile-nav-summary">Menú</summary>
+                <ul class="nav-list mobile-nav-list">
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#sobre-mi">Sobre mí</a></li>
+                    <li><a href="#trayectoria">Trayectoria</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#eventos">Eventos</a></li>
+                    <li><a href="#faq">Preguntas Frecuentes</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </details>
+
+            <!-- Navegación de escritorio -->
+            <nav class="navbar desktop-nav" aria-label="Navegación principal">
                 <ul class="nav-list">
                     <li><a href="#galeria">Galería</a></li>
                     <li><a href="#sobre-mi">Sobre mí</a></li>
@@ -70,11 +86,8 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Mi mundo en el dibujo</h1>
-            <div class="hero-image-container">
-                <img src="https://via.placeholder.com/600x500/8B7D6B/FFFFFF?text=Obra+Principal" alt="Obra maestra de Evelyn Barboza - pintura en acrílico" class="hero-image">
-            </div>
             <p class="hero-subtitle">Pintura en acrílico sobre lienzo</p>
-            <a href="https://wa.me/598ejemplo" class="cta-button" target="_blank" rel="noopener noreferrer">Contactar por WhatsApp</a>
+            <a href="https://wa.me/59899123456" class="cta-button" target="_blank" rel="noopener noreferrer">Contactar por WhatsApp</a>
         </div>
     </section>
 
@@ -84,42 +97,42 @@
             <h2>Galería</h2>
             <div class="gallery-grid">
                 <article class="gallery-item">
-                    <img src="https://via.placeholder.com/300x250/9B8D7B/FFFFFF?text=Paisaje+1" alt="Paisaje - obra de Evelyn Barboza">
+                    <img src="https://images.unsplash.com/photo-1578301978018-3005759f48f7?q=80&w=1144&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Paisaje - obra de Evelyn Barboza">
                     <h3>Paisaje Sereno</h3>
                     <p class="technique"><strong>Técnica:</strong> Pincel seco</p>
                     <p class="description">Óleo sobre lienzo 70x50cm. Una reflexión sobre la tranquilidad de la naturaleza y la paz que nos transmite.</p>
                 </article>
 
                 <article class="gallery-item">
-                    <img src="https://via.placeholder.com/300x250/7D8D9B/FFFFFF?text=Naturaleza+2" alt="Estudio de naturaleza">
+                    <img src="https://images.unsplash.com/photo-1705599773422-c1066356f801?q=80&w=1116&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Estudio de naturaleza">
                     <h3>Detalles de la Naturaleza</h3>
                     <p class="technique"><strong>Técnica:</strong> Stippling (Punteado)</p>
                     <p class="description">Acrílico sobre lienzo 50x50cm. Técnica de punteado que detalla la complejidad de los ecosistemas naturales.</p>
                 </article>
 
                 <article class="gallery-item">
-                    <img src="https://via.placeholder.com/300x250/8D7D9B/FFFFFF?text=Textura+3" alt="Obra con textura">
+                    <img src="https://images.unsplash.com/photo-1667980898743-fcfe470b7d2a?q=80&w=714&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Obra con textura">
                     <h3>Texturas Naturales</h3>
                     <p class="technique"><strong>Técnica:</strong> Scumbling</p>
                     <p class="description">Acrílico sobre lienzo 60x60cm. Uso de scumbling para crear capas y texturas que simulan la rugosidad del terreno.</p>
                 </article>
 
                 <article class="gallery-item">
-                    <img src="https://via.placeholder.com/300x250/6D8D9B/FFFFFF?text=Obra+4" alt="Paisaje montañoso">
+                    <img src="https://plus.unsplash.com/premium_photo-1711987680591-bcb0687c4cba?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Paisaje montañoso">
                     <h3>Montañas al Atardecer</h3>
                     <p class="technique"><strong>Técnica:</strong> Pincel seco</p>
                     <p class="description">Acrílico sobre lienzo 80x60cm. Captura del mágico momento del atardecer sobre las montañas.</p>
                 </article>
 
                 <article class="gallery-item">
-                    <img src="https://via.placeholder.com/300x250/9D7D8B/FFFFFF?text=Flora+5" alt="Estudio botánico">
+                    <img src="https://plus.unsplash.com/premium_photo-1689518469262-6f9499412ef0?q=80&w=1145&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Estudio botánico">
                     <h3>Florales Abstractos</h3>
                     <p class="technique"><strong>Técnica:</strong> Stippling (Punteado)</p>
                     <p class="description">Acrílico sobre lienzo 55x70cm. Interpretación abstracta de formas florales con técnica de punteado fino.</p>
                 </article>
 
                 <article class="gallery-item">
-                    <img src="https://via.placeholder.com/300x250/8D9D7B/FFFFFF?text=Paisaje+6" alt="Bosque pintado">
+                    <img src="https://images.unsplash.com/photo-1604342767712-f7448911dc51?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Bosque pintado">
                     <h3>Bosque Encantado</h3>
                     <p class="technique"><strong>Técnica:</strong> Scumbling</p>
                     <p class="description">Acrílico sobre lienzo 65x65cm. Profundidad y misterio del bosque expresados a través de capas de color.</p>
