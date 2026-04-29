@@ -1,6 +1,8 @@
 /* ============================================
    RESET Y VARIABLES
    ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -18,6 +20,7 @@
     
     --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --font-serif: 'Georgia', 'Times New Roman', serif;
+    --font-signature: 'Great Vibes', cursive;
     
     --transition: all 0.3s ease;
 }
@@ -56,6 +59,21 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.brand-block {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.brand-photo {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.75);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
 }
 
 .logo {
@@ -118,20 +136,21 @@ body {
 
 .mobile-nav-accordion > .mobile-nav-summary {
     list-style: none;
-    padding: 0.75rem 1rem;
-    background-color: transparent;
+    padding: 0.45rem 0.6rem;
+    background-color: rgba(255,255,255,0.06); /* solo el botón hamburguesa tiene fondo */
     color: var(--light-text);
     font-weight: 700;
     cursor: pointer;
     border-radius: 8px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    justify-content: center; /* Centrar el texto "Menú" cuando está colapsado */
+    justify-content: center;
     text-align: center;
+    gap: 0.4rem;
 }
 
 .mobile-nav-accordion[open] > .mobile-nav-summary {
-    background-color: rgba(255,255,255,0.04);
+    background-color: rgba(255,255,255,0.08);
 }
 
 .mobile-nav-accordion summary::-webkit-details-marker {
@@ -206,11 +225,12 @@ body {
 }
 
 .hero h1 {
-    font-family: var(--font-serif);
-    font-size: 3.5rem;
+    font-family: var(--font-signature);
+    font-size: 4.5rem;
     margin-bottom: 2rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
+    font-weight: 400;
 }
 
 .hero-subtitle {
@@ -221,21 +241,41 @@ body {
 }
 
 .cta-button {
-    display: inline-block;
-    background-color: var(--secondary-color);
-    color: var(--dark-text);
-    padding: 12px 30px;
-    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366; /* WhatsApp green */
+    color: #ffffff;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 50%;
     text-decoration: none;
-    font-weight: bold;
-    transition: var(--transition);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-weight: 700;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+.cta-icon {
+    width: 20px;
+    height: 20px;
+    color: #ffffff; /* ícono blanco sobre fondo verde */
+}
+
+.cta-caption {
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    font-weight: 700;
+    text-align: center;
 }
 
 .cta-button:hover {
-    background-color: var(--accent-color);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background-color: #128C7E; /* darker WhatsApp on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.14);
 }
 
 /* ============================================
@@ -632,13 +672,33 @@ body {
    RESPONSIVE DESIGN
    ============================================ */
 @media (max-width: 768px) {
+    .header {
+        padding: 0.35rem 0;
+    }
+
     .header-content {
         flex-direction: column;
         gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    .brand-block {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .brand-photo {
+        display: block;
+        width: 48px;
+        height: 48px;
     }
 
     .logo {
-        font-size: 1.3rem;
+        font-size: 1.15rem;
+    }
+
+    .hero {
+        padding-top: 60px;
     }
 
     .navbar {
@@ -655,6 +715,45 @@ body {
     .mobile-nav-accordion {
         display: block;
         width: 100%;
+    }
+
+    /* Quitar padding inferior del summary en mobile (ajuste fino) */
+    .mobile-nav-accordion > .mobile-nav-summary {
+        padding-bottom: 0;
+    }
+
+    /* Estilos del icono hamburguesa */
+    .hamburger-icon {
+        width: 20px;
+        height: 20px;
+        color: var(--light-text);
+        display: block;
+    }
+
+    /* Hacer el fondo circular y centrar el botón hamburguesa */
+    .mobile-nav-accordion > .mobile-nav-summary {
+        width: 38px;
+        height: 38px;
+        padding: 0;
+        border-radius: 50%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(255,255,255,0.06);
+    }
+
+    /* ocultar texto visible; se mantiene para lectores de pantalla */
+    .sr-only {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        padding: 0 !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        clip: rect(0, 0, 0, 0) !important;
+        white-space: nowrap !important;
+        border: 0 !important;
     }
 
     .nav-list {
@@ -723,6 +822,11 @@ body {
         padding: 0 1rem;
     }
 
+    .brand-photo {
+        width: 48px;
+        height: 48px;
+    }
+
     .logo {
         font-size: 1.1rem;
     }
@@ -737,7 +841,7 @@ body {
     }
 
     .hero {
-        padding-top: 70px;
+        padding-top: 56px;
     }
 
     .hero h1 {
@@ -750,8 +854,17 @@ body {
     }
 
     .cta-button {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+        width: 40px;
+        height: 40px;
+    }
+
+    .cta-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .cta-caption {
+        font-size: 0.72rem;
     }
 
     .section h2 {
